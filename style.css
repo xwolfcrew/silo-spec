@@ -176,6 +176,10 @@ nav.nav-dark-text .nav-right a {
     overflow-x: clip;
   }
 
+  nav {
+    padding: 2rem 2rem;
+  }
+
   .nav-right {
     display: none;
   }
@@ -187,7 +191,7 @@ nav.nav-dark-text .nav-right a {
 
   .section-1-gallery {
     position: absolute;
-    width: 300px;
+    width: 260px;
     height: auto;
     aspect-ratio: 3 / 4;
     top: 50%;
