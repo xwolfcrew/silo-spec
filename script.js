@@ -158,6 +158,31 @@ navLinksRoll.forEach((link) => {
   });
 });
 
+const section2 = document.querySelector(".section-2");
+const section2Text = document.querySelector(".section-2 h2");
+
+const section2TL = gsap.timeline({
+  scrollTrigger: {
+    trigger: ".section-2",
+    start: "top 50%",
+    end: "top 10%",
+    scrub: 1.5,
+  },
+});
+
+gsap.set(section2Text, {
+  opacity: 0,
+  yPercent: 40,
+})
+
+section2TL
+
+.to(section2Text, {
+  opacity: 1,
+  yPercent: 0,
+  ease: "power2.out",
+})
+
 const path = document.querySelector(".section-3-wrapper svg path.e");
 const endPoint = document.querySelector(".section-3-wrapper svg path.d");
 const italyText = document.querySelector(".section-3-bg-copy");
@@ -192,7 +217,7 @@ if (path && endPoint) {
     scrollTrigger: {
       trigger: ".section-3",
       start: "top 50%",
-      end: "top 10%",
+      end: "top 20%",
       scrub: 1.5,
     },
   });
