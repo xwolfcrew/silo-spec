@@ -161,3 +161,87 @@ navLinksRoll.forEach((link) => {
     rollTL.restart();
   });
 });
+
+const path = document.querySelector(".section-3-wrapper svg path.e");
+const endPoint = document.querySelector(".section-3-wrapper svg path.d");
+const italyText = document.querySelector(".section-3-bg-copy");
+
+const imageOverlay = document.querySelector(".image-overlay img");
+
+if (path && endPoint) {
+  const pathLength = path.getTotalLength();
+
+  gsap.set(italyText, {
+    opacity: "0",
+    xPercent: -150,
+  });
+
+  gsap.set(imageOverlay, {
+    yPercent: 20,
+    opacity: 0,
+  });
+
+  gsap.set(path, {
+    strokeDasharray: pathLength,
+    strokeDashoffset: pathLength,
+  });
+
+  gsap.set(endPoint, {
+    scale: 0,
+    opacity: 0,
+    svgOrigin: "615.5 1285.5",
+  });
+
+  const section3TL = gsap.timeline({
+    scrollTrigger: {
+      trigger: ".section-3",
+      start: "top 50%",
+      end: "top 10%",
+      scrub: 1.5,
+    },
+  });
+
+  section3TL
+
+    .to(
+      imageOverlay,
+      {
+        yPercent: 0,
+        opacity: 1,
+        duration: 2,
+        ease: "power1.inOut",
+      },
+      "-=0.2",
+    )
+
+    .to(
+      path,
+      {
+        strokeDashoffset: 0,
+        duration: 1,
+        ease: "power1.inOut",
+      },
+      "-=0.5",
+    )
+
+    .to(
+      endPoint,
+      {
+        scale: 1,
+        opacity: 1,
+        duration: 0.2,
+        ease: "power1.out",
+      },
+      "-=0.2",
+    )
+
+    .to(
+      italyText,
+      {
+        opacity: "1",
+        xPercent: -50,
+        duration: 1,
+      },
+      "-=0.4",
+    );
+}
