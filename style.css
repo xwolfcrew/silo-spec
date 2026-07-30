@@ -321,7 +321,8 @@ nav.nav-dark-text .nav-right a {
   }
 
   .section-1-content h1 {
-    font-size: 30vw;
+    font-size: 24vw;
+    gap: 1rem;
   }
 
   .section-1-content p {
