@@ -16,10 +16,6 @@ dynamicImagePaths.forEach((src, index) => {
   img.alt = `Dynamic Gallery Image ${index + 1}`;
   img.classList.add("dynamic-gallery-img");
 
-  if (src.includes("img2.jpg")) {
-    img.style.transform = "scale(1.2";
-  }
-
   galleryContainer.appendChild(img);
 });
 
