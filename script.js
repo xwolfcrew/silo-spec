@@ -210,6 +210,7 @@ if (path && endPoint) {
   gsap.set(endPoint, {
     scale: 0,
     opacity: 0,
+    rotation: 45,
     svgOrigin: "615.5 1285.5",
   });
 
@@ -250,6 +251,7 @@ if (path && endPoint) {
       {
         scale: 1,
         opacity: 1,
+        rotation: 0,
         duration: 0.2,
         ease: "power1.out",
       },
