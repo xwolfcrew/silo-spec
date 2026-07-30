@@ -13,8 +13,11 @@ nav {
   left: 0;
   width: 100%;
   height: fit-content;
-  padding: 1rem 2rem;
   z-index: 999;
+
+  padding-top: max(1rem, env(safe-area-inset-top));
+  padding-left: max(2rem, env(safe-area-inset-left));
+  padding-right: max(2rem, env(safe-area-inset-right));
 }
 
 nav .nav-left,
