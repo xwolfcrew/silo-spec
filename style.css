@@ -139,8 +139,7 @@ nav.nav-dark-text .nav-right a {
   height: auto;
   aspect-ratio: 3 / 4;
   bottom: 2rem;
-  right: 0;
-  transform: translate(-50%, -50%);
+  right: 2rem;
   overflow: hidden;
   z-index: 2;
   border-radius: 40px;

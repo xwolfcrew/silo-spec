@@ -59,11 +59,6 @@ gsap.set(
   },
 );
 
-gsap.set(".section-1-gallery", {
-  xPercent: -50,
-  yPercent: -50,
-});
-
 loadTL
 
   .to(".background-image img", {
