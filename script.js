@@ -205,6 +205,7 @@ if (path && endPoint) {
   gsap.set(path, {
     strokeDasharray: pathLength,
     strokeDashoffset: pathLength,
+    opacity: 0,
   });
 
   gsap.set(endPoint, {
@@ -217,9 +218,9 @@ if (path && endPoint) {
   const section3TL = gsap.timeline({
     scrollTrigger: {
       trigger: ".section-3",
-      start: "top 50%",
-      end: "top 20%",
-      scrub: 1.5,
+      start: "top 30%",
+      end: "top 8%",
+      scrub: 2,
     },
   });
 
@@ -241,6 +242,7 @@ if (path && endPoint) {
       {
         strokeDashoffset: 0,
         duration: 1,
+        opacity: 1,
         ease: "power1.inOut",
       },
       "-=0.5",
