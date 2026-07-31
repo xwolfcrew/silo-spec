@@ -173,15 +173,13 @@ const section2TL = gsap.timeline({
 gsap.set(section2Text, {
   opacity: 0,
   yPercent: 40,
-})
+});
 
-section2TL
-
-.to(section2Text, {
+section2TL.to(section2Text, {
   opacity: 1,
   yPercent: 0,
   ease: "power2.out",
-})
+});
 
 const path = document.querySelector(".section-3-wrapper svg path.e");
 const endPoint = document.querySelector(".section-3-wrapper svg path.d");
@@ -270,3 +268,60 @@ if (path && endPoint) {
       "-=0.4",
     );
 }
+
+const section4 = document.querySelector(".section-4");
+const section4BG = document.querySelector(
+  ".section-4 .section-4-wrapper .bg-image",
+);
+const section4Text = document.querySelector(".section-4-wrapper .text-content");
+const section4CardContainer = document.querySelector(
+  ".section-4-wrapper .card-container",
+);
+
+gsap.set(section4BG, {
+  xPercent: -100,
+  opacity: 0,
+});
+
+gsap.set(section4Text, {
+  xPercent: -100,
+});
+
+gsap.set(section4CardContainer, {
+  xPercent: 100,
+});
+
+const section4TL = gsap.timeline({
+  scrollTrigger: {
+    trigger: ".section-4",
+    start: "top 80%",
+    end: "top 0%",
+    scrub: 1.5,
+  },
+});
+
+section4TL
+
+  .to(section4BG, {
+    xPercent: 0,
+    opacity: 1,
+    ease: "power2.out",
+  })
+
+  .to(
+    section4Text,
+    {
+      xPercent: 0,
+      ease: "power2.out",
+    },
+    "-=0.3",
+  )
+
+  .to(
+    section4CardContainer,
+    {
+      xPercent: 0,
+      ease: "power2.out",
+    },
+    "-=0.5",
+  );
