@@ -1,0 +1,255 @@
+@import url("https://fonts.cdnfonts.com/css/amoera");
+@import url("https://fonts.cdnfonts.com/css/instrument-sans");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: fit-content;
+  z-index: 999;
+
+  padding-top: max(1rem, env(safe-area-inset-top));
+  padding-left: max(2rem, env(safe-area-inset-left));
+  padding-right: max(2rem, env(safe-area-inset-right));
+}
+
+nav .nav-left,
+nav .nav-right a {
+  transition: color 0.4s ease;
+}
+
+nav.nav-dark-text .nav-left,
+nav.nav-dark-text .nav-right a {
+  color: #000000;
+}
+
+.nav-wrapper {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nav-left {
+  font-family: "Amoera", sans-serif;
+  font-size: clamp(4rem, 8vh, 5rem);
+  font-weight: 800;
+  color: white;
+  cursor: pointer;
+}
+
+.nav-left a {
+  text-decoration: none;
+  color: white;
+}
+
+.nav-right {
+  display: flex;
+  flex-direction: row;
+  gap: 2rem;
+}
+
+.nav-right a {
+  font-family: "Instrument Sans", sans-serif;
+  font-size: clamp(1rem, 4vh, 4rem);
+  text-decoration: none;
+  color: black;
+  cursor: pointer;
+}
+
+.nav-right a.nav-link {
+  position: relative;
+  display: inline-block;
+  overflow: hidden;
+  text-decoration: none;
+  color: black;
+  padding: 0.2rem 0;
+}
+
+.nav-right a.nav-link:nth-child(1) {
+  color: grey;
+}
+
+.nav-right a.nav-link span {
+  display: inline-block;
+}
+
+.hero {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-end;
+  overflow: hidden;
+}
+
+.hero .hero-wrapper {
+  position: relative;
+  width: 100%;
+  height: 100%;
+
+  display: flex;
+  justify-content: flex-start;
+}
+
+.hero-wrapper .bg-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.hero-wrapper .bg-image img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.hero-wrapper .bg-image img[src="./assets/img2.jpg"] {
+  transform: scale(1.2);
+}
+
+.product-container {
+  position: relative;
+  width: max-content;
+  height: 100%;
+  padding-top: 8rem;
+  padding-bottom: 2rem;
+  padding-left: 2rem;
+  padding-right: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  z-index: 2;
+  overflow-y: auto;
+  overflow: visible;
+}
+
+.product-container::-webkit-scrollbar {
+  display: none;
+}
+.product-container {
+  -ms-overflow-style: nonoe;
+  scrollbar-width: none;
+}
+
+.product {
+  flex: 1 1 0;
+  min-height: 0;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  width: 200px;
+  padding-bottom: 0.5rem;
+  background-color: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(10px);
+  box-shadow: 0px 10px 40px rgba(0, 0, 0, 0.5);
+  border-radius: 34px;
+  transition:
+    border-color 0.3s ease,
+    transform 0.3s ease;
+  cursor: pointer;
+}
+
+.product:hover {
+  transform: translateX(2px);
+}
+
+.product.active {
+  border: 2px solid rgba(255, 255, 255, 0.8);
+}
+
+.product .product-img {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 1 / 1;
+  overflow: hidden;
+}
+
+.product .product-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 30px;
+}
+
+.product .product-description {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.product-description p {
+  font-family: "Instrument Sans", sans-serif;
+  font-size: clamp(0.8rem, 0.5vw, 1rem);
+  color: white;
+}
+
+.product-alt {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  padding: 2rem;
+  display: flex;
+  flex-direction: row;
+  gap: 2rem;
+  align-items: flex-end;
+  justify-content: flex-end;
+}
+
+.product-alt h1,
+.product-alt p {
+  color: white;
+  text-box-trim: trim-both;
+  text-box-edge: cap alphabetic;
+  font-family: "Instrument Sans", sans-serif;
+}
+
+.product-alt h1 {
+  font-size: clamp(3rem, 3vw, 3.5rem);
+}
+
+.product-alt p {
+  font-size: clamp(1rem, 1.2vw, 1.5rem);
+}
+
+@media (max-width: 900px) {
+  .nav-right {
+    display: none;
+  }
+
+  .nav-wrapper {
+    justify-content: center;
+  }
+
+  .hero .hero-wrapper {
+    width: 100%;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+  }
+
+
+.product-alt {
+  display: none;
+}
+}

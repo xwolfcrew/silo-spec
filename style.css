@@ -5,6 +5,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  scroll-behavior: smooth;
 }
 
 nav {
@@ -46,6 +47,11 @@ nav.nav-dark-text .nav-right a {
   font-weight: 800;
   color: white;
   cursor: pointer;
+}
+
+.nav-left a {
+  text-decoration: none;
+  color: white;
 }
 
 .nav-right {
@@ -319,14 +325,16 @@ nav.nav-dark-text .nav-right a {
   height: 100%;
   transform: translate(-80px, 60px);
   object-fit: cover;
+  will-change: transform, opacity;
 }
 
 .section-4-wrapper .text-content {
-  position: absolute; 
+  position: absolute;
   bottom: 2rem;
   left: -5rem;
   z-index: 2;
   color: white;
+  will-change: transform, opacity;
 }
 
 .section-4-wrapper .text-content h1 {
@@ -356,11 +364,13 @@ nav.nav-dark-text .nav-right a {
   padding-bottom: 30%;
   padding-top: 16%;
   z-index: 4;
-  
+
   overflow-x: auto;
   overflow-y: hidden;
   scroll-behavior: smooth;
   -webkit-overflow-scrolling: touch;
+
+  will-change: transform, opacity;
 }
 
 .section-4-wrapper .card-container::-webkit-scrollbar {
@@ -383,7 +393,7 @@ nav.nav-dark-text .nav-right a {
   background-color: rgba(255, 255, 255, 1);
   backdrop-filter: blur(20px);
   border-radius: 50px;
-  filter: drop-shadow(0px 10px 30px rgba(0, 0, 0, 0.5))
+  filter: drop-shadow(0px 10px 30px rgba(0, 0, 0, 0.5));
 }
 
 .card .card-image {
@@ -400,7 +410,8 @@ nav.nav-dark-text .nav-right a {
   object-fit: cover;
 }
 
-.card .headline, .card .subtext {
+.card .headline,
+.card .subtext {
   padding-left: 0;
   width: 100%;
 }
@@ -517,7 +528,7 @@ nav.nav-dark-text .nav-right a {
 
   .section4-wrapper .bg-image {
     width: 100%;
-    height:100%;
+    height: 100%;
   }
 
   .section-4-wrapper .bg-image img {
@@ -535,6 +546,5 @@ nav.nav-dark-text .nav-right a {
 
   .section-4-wrapper .card-container .card {
     width: 300px;
-
   }
 }

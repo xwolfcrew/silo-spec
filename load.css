@@ -1,0 +1,37 @@
+@import url("https://fonts.cdnfonts.com/css/amoera");
+@import url("https://fonts.cdnfonts.com/css/instrument-sans");
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    overflow: hidden;
+}
+
+.loading {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.loading-wrapper {
+    position: relative;
+    width: max-content;
+    height: auto;
+    perspective: 1000px;
+    transform-style: preserve-3d;
+}
+
+.loading-wrapper h1 {
+    font-family: "Instrument Sans", sans-serif;
+    font-size: clamp(3rem, 8vw, 6rem);
+    font-weight: 800;
+    color: #000000;
+    will-change: transform, opacity;
+}

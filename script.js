@@ -124,6 +124,16 @@ ScrollTrigger.create({
   },
 });
 
+ScrollTrigger.create({
+  trigger: ".section-4",
+  start: "top 10%",
+  end: "bottom 20%",
+  toggleClass: {
+    targets: "nav",
+    className: "nav-dark-text",
+  },
+});
+
 const navLinksRoll = document.querySelectorAll(".nav-right .nav-link");
 
 navLinksRoll.forEach((link) => {
