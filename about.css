@@ -1,0 +1,190 @@
+@import url("https://fonts.cdnfonts.com/css/amoera");
+@import url("https://fonts.cdnfonts.com/css/instrument-sans");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: fit-content;
+  z-index: 999;
+
+  padding-top: max(1rem, env(safe-area-inset-top));
+  padding-left: max(2rem, env(safe-area-inset-left));
+  padding-right: max(2rem, env(safe-area-inset-right));
+}
+
+nav .nav-left,
+nav .nav-right a {
+  transition: color 0.4s ease;
+}
+
+nav.nav-dark-text .nav-left,
+nav.nav-dark-text .nav-right a {
+  color: #000000;
+}
+
+.nav-wrapper {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nav-left {
+  font-family: "Amoera", sans-serif;
+  font-size: clamp(4rem, 8vh, 5rem);
+  font-weight: 800;
+  color: white;
+  cursor: pointer;
+}
+
+.nav-left a {
+  text-decoration: none;
+  color: white;
+}
+
+.nav-right {
+  display: flex;
+  flex-direction: row;
+  gap: 2rem;
+}
+
+.nav-right a {
+  font-family: "Instrument Sans", sans-serif;
+  font-size: clamp(1rem, 4vh, 4rem);
+  text-decoration: none;
+  color: white;
+  cursor: pointer;
+}
+
+.nav-right a.nav-link {
+  position: relative;
+  display: inline-block;
+  overflow: hidden;
+  text-decoration: none;
+  color: white;
+  padding: 0.2rem 0;
+}
+
+.nav-right a.nav-link span {
+  display: inline-block;
+}
+
+.hero {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.94);
+  z-index: 1;
+  padding-top: 8rem;
+  overflow: hidden;
+}
+
+.hero::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+
+  background-image: url("./assets/topographic.webp");
+  background-repeat: no-repeat;
+  background-position: -120% 90%;
+
+  filter: invert(1);
+  opacity: 0.08;
+  mix-blend-mode: screen;
+  pointer-events: none;
+  z-index: 1;
+
+  -webkit-mask-image: radial-gradient(circle, black 60%, transparent 100%);
+  mask-image: radial-gradient(circle, transparent 40%, black 100%);
+}
+
+.hero-wrapper {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  z-index: 2;
+}
+
+.hero-left {
+  width: 50%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  line-height: 1;
+}
+
+.hero-left h1,
+.hero-left p {
+  font-family: "Amoera", sans-serif;
+  color: white;
+}
+
+.hero-left h1 {
+  font-size: clamp(8rem, 10vw, 9rem);
+}
+
+.hero-right {
+  position: relative;
+  width: 50%;
+  height: 100%;
+  overflow-y: auto;
+  overflow-x: hidden;
+  -webkit-overflow-scrolling: touch;
+}
+
+.hero-right::-webkit-scrollbar {
+  display: none;
+}
+.hero-right {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.hero-right .content-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  align-items: flex-start;
+  padding: 10rem 6rem 6rem 6rem;
+}
+
+.hero-right .content-wrapper p {
+  font-family: "Instrument Sans", sans-serif;
+  color: white;
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+.hero-right .content-wrapper .image-container {
+  position: relative;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 3 / 4;
+  overflow: hidden;
+  border-radius: 30px;
+}
+
+.hero-right .content-wrapper .image-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 50% 50%;
+}
