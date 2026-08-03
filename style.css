@@ -47,6 +47,8 @@ nav.nav-dark-text .nav-right a {
   font-weight: 800;
   color: white;
   cursor: pointer;
+  text-box-trim: trim-both;
+  text-box-edge: cap alphabetic;
 }
 
 .nav-left a {

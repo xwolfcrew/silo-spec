@@ -233,6 +233,10 @@ nav.nav-dark-text .nav-right a {
 }
 
 @media (max-width: 900px) {
+  nav {
+    padding: 2rem 2rem;
+  }
+
   .nav-right {
     display: none;
   }
@@ -251,5 +255,21 @@ nav.nav-dark-text .nav-right a {
 
 .product-alt {
   display: none;
+}
+
+.product-container {
+  overflow-y: auto;
+  overflow-x: hidden;
+  height: 100%;
+  padding-top: 8rem;
+  padding-bottom: 3rem;
+  -webkit-overflow-scrolling: touch;
+}
+
+.product {
+  flex: 0 0 auto;
+  width: 200px;
+  height: 230px;
+  min-height: 230px;
 }
 }
